@@ -13,9 +13,17 @@ namespace logicalProblem
             while (nextProblem.Equals("y"))
             {
                 Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers 6.StopWatch");
-                Console.WriteLine("7.Vending Machine");
-                choice = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Give Value/Number: ");
+                Console.WriteLine("7.Vending Machine 8.Day of week");
+                choice = Convert.ToInt32(Console.ReadLine());                
+                if (choice == 8)
+                {
+                    Console.WriteLine("m-d-y format of input");
+                    Console.WriteLine("Month input:");
+                }
+                else
+                {
+                    Console.WriteLine("Give Value/Number: ");
+                }
                 number = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -46,6 +54,15 @@ namespace logicalProblem
                     case 7:
                         VendingMachine vendingMachine = new VendingMachine(number);
                         vendingMachine.MoneyNotes();
+                        break;
+                    case 8:
+                        
+                        Console.WriteLine("Day input:");
+                        int number1= Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Year input:");
+                        int number2= Convert.ToInt32(Console.ReadLine());
+                        DayOfWeek dayOfWeek = new DayOfWeek(number, number1, number2);
+                        dayOfWeek.DayCalc();
                         break;
                     default: 
                         Console.WriteLine("Wrong Choice");
