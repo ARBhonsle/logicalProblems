@@ -13,6 +13,7 @@ namespace logicalProblem
             while (nextProblem.Equals("y"))
             {
                 Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers 6.StopWatch");
+                Console.WriteLine("7.Vending Machine");
                 choice = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Give Value/Number: ");
                 number = Convert.ToInt32(Console.ReadLine());
@@ -41,6 +42,10 @@ namespace logicalProblem
                     case 6:
                         StopWatch watch = new StopWatch(number);
                         watch.TimeElapsed();
+                        break;
+                    case 7:
+                        VendingMachine vendingMachine = new VendingMachine(number);
+                        vendingMachine.MoneyNotes();
                         break;
                     default: 
                         Console.WriteLine("Wrong Choice");
