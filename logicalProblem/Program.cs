@@ -12,9 +12,9 @@ namespace logicalProblem
             nextProblem = "y";
             while (nextProblem.Equals("y"))
             {
-                Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers");
+                Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers 6.StopWatch");
                 choice = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Give number: ");
+                Console.WriteLine("Give Value/Number: ");
                 number = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -37,6 +37,10 @@ namespace logicalProblem
                     case 5:
                         CouponNumbers couponNumbers = new CouponNumbers(number);
                         couponNumbers.DistinctCoupon();
+                        break;
+                    case 6:
+                        StopWatch watch = new StopWatch(number);
+                        watch.TimeElapsed();
                         break;
                     default: 
                         Console.WriteLine("Wrong Choice");
