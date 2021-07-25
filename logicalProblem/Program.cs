@@ -12,7 +12,7 @@ namespace logicalProblem
             nextProblem = "y";
             while (nextProblem.Equals("y"))
             {
-                Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number");
+                Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number");
                 choice = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Give number: ");
                 number = Convert.ToInt32(Console.ReadLine());
@@ -30,8 +30,12 @@ namespace logicalProblem
                         PrimeNumber primeNumber = new PrimeNumber(number);
                         primeNumber.Check();
                         break;
+                    case 4:
+                        ReverseNumber reverseNumber = new ReverseNumber(number);
+                        reverseNumber.Reverse();
+                        break;
                     default: 
-                        Console.WriteLine("Wrong Input");
+                        Console.WriteLine("Wrong Choice");
                         break;
                 }
                 Console.WriteLine("Do you want to continue? y or n");
