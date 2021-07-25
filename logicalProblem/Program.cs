@@ -12,21 +12,23 @@ namespace logicalProblem
             nextProblem = "y";
             while (nextProblem.Equals("y"))
             {
-                Console.WriteLine("1.Fibonacci Series 2.Perfect Number");
+                Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number");
                 choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Give number: ");
+                number = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Give number: ");
-                        number = Convert.ToInt32(Console.ReadLine());
                         FibonacciSeries fibonacciSeries = new FibonacciSeries(number);
                         fibonacciSeries.Series();
                         break;
                     case 2:
-                        Console.WriteLine("Give number: ");
-                        number = Convert.ToInt32(Console.ReadLine());
                         PerfectNumber perfectNumber = new PerfectNumber(number);
                         perfectNumber.Compute();
+                        break;
+                    case 3:
+                        PrimeNumber primeNumber = new PrimeNumber(number);
+                        primeNumber.Check();
                         break;
                     default: 
                         Console.WriteLine("Wrong Input");
