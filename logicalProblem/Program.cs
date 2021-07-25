@@ -13,7 +13,7 @@ namespace logicalProblem
             while (nextProblem.Equals("y"))
             {
                 Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers 6.StopWatch");
-                Console.WriteLine("7.Vending Machine 8.Day of week 9.Temperature Conversion");
+                Console.WriteLine("7.Vending Machine 8.Day of week 9.Temperature Conversion 10 Monthly payment");
                 choice = Convert.ToInt32(Console.ReadLine());                
                 if (choice == 8)
                 {
@@ -23,6 +23,11 @@ namespace logicalProblem
                 else if (choice == 9)
                 {
                     Console.WriteLine("Convert 1.Celsius to Farenheit 2.Farenheit to Celsius");
+                }
+                else if (choice == 10)
+                {
+                    Console.WriteLine("Give Monthly Loan payment amount");
+                    Console.WriteLine("Give Principle Amount");
                 }
                 else
                 {
@@ -71,7 +76,7 @@ namespace logicalProblem
                         if(number == 1 || number == 2)
                         {
                             Console.WriteLine("Give Degree ");
-                            Double degree = Convert.ToInt32(Console.ReadLine());
+                            Double degree = Convert.ToDouble(Console.ReadLine());
                             TemperatureConversion temperatureConversion = new TemperatureConversion(number, degree);
                             temperatureConversion.Convert();
                         }
@@ -79,6 +84,14 @@ namespace logicalProblem
                         {
                             Console.WriteLine("Wrong Input");
                         }                        
+                        break;
+                    case 10:
+                        Console.WriteLine("Give Years (loan duration time)");
+                        int time= Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Give interest rate of loan");
+                        Double rate= Convert.ToDouble(Console.ReadLine());
+                        MonthlyPayment monthlyPayment = new MonthlyPayment(number, time, rate);
+                        monthlyPayment.MonthlyCalc();
                         break;
                     default: 
                         Console.WriteLine("Wrong Choice");
