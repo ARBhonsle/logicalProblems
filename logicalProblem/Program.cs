@@ -12,7 +12,7 @@ namespace logicalProblem
             nextProblem = "y";
             while (nextProblem.Equals("y"))
             {
-                Console.WriteLine("1.Fibonacci Series");
+                Console.WriteLine("1.Fibonacci Series 2.Perfect Number");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -21,6 +21,12 @@ namespace logicalProblem
                         number = Convert.ToInt32(Console.ReadLine());
                         FibonacciSeries fibonacciSeries = new FibonacciSeries(number);
                         fibonacciSeries.Series();
+                        break;
+                    case 2:
+                        Console.WriteLine("Give number: ");
+                        number = Convert.ToInt32(Console.ReadLine());
+                        PerfectNumber perfectNumber = new PerfectNumber(number);
+                        perfectNumber.Compute();
                         break;
                     default: 
                         Console.WriteLine("Wrong Input");
