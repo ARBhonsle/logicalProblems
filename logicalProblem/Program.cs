@@ -13,12 +13,16 @@ namespace logicalProblem
             while (nextProblem.Equals("y"))
             {
                 Console.WriteLine("1.Fibonacci Series 2.Perfect Number 3.Prime Number 4.Reverse Number 5.Coupon Numbers 6.StopWatch");
-                Console.WriteLine("7.Vending Machine 8.Day of week");
+                Console.WriteLine("7.Vending Machine 8.Day of week 9.Temperature Conversion");
                 choice = Convert.ToInt32(Console.ReadLine());                
                 if (choice == 8)
                 {
                     Console.WriteLine("m-d-y format of input");
                     Console.WriteLine("Month input:");
+                }
+                else if (choice == 9)
+                {
+                    Console.WriteLine("Convert 1.Celsius to Farenheit 2.Farenheit to Celsius");
                 }
                 else
                 {
@@ -55,14 +59,26 @@ namespace logicalProblem
                         VendingMachine vendingMachine = new VendingMachine(number);
                         vendingMachine.MoneyNotes();
                         break;
-                    case 8:
-                        
+                    case 8:                        
                         Console.WriteLine("Day input:");
                         int number1= Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Year input:");
                         int number2= Convert.ToInt32(Console.ReadLine());
                         DayOfWeek dayOfWeek = new DayOfWeek(number, number1, number2);
                         dayOfWeek.DayCalc();
+                        break;
+                    case 9:
+                        if(number == 1 || number == 2)
+                        {
+                            Console.WriteLine("Give Degree ");
+                            Double degree = Convert.ToInt32(Console.ReadLine());
+                            TemperatureConversion temperatureConversion = new TemperatureConversion(number, degree);
+                            temperatureConversion.Convert();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong Input");
+                        }                        
                         break;
                     default: 
                         Console.WriteLine("Wrong Choice");
